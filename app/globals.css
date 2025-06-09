@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 142 76% 36%;
+    --primary-foreground: 355 7% 97%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 142 76% 36%;
+    --accent-foreground: 355 7% 97%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 142 76% 36%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  section {
+    @apply py-16;
+  }
+
+  h2 {
+    @apply text-3xl font-bold mb-8 text-center;
+  }
+}
+
+@layer components {
+  .skill-card {
+    @apply transition-all;
+    @apply duration-300;
+    @apply ease-in-out;
+    @apply hover:scale-105;
+    @apply hover:shadow;
+    @apply hover:border-primary/60;
+    @apply hover:bg-gradient-to-br;
+    @apply hover:from-card;
+    @apply hover:to-primary/5;
+  }
+
+  .skill-badge {
+    @apply transition-all;
+    @apply duration-200;
+    @apply ease-in-out;
+    @apply hover:bg-primary;
+    @apply hover:text-primary-foreground;
+    @apply hover:scale-110;
+    @apply hover:shadow;
+  }
+
+  .language-badge {
+    @apply transition-all;
+    @apply duration-200;
+    @apply ease-in-out;
+    @apply hover:scale-105;
+    @apply hover:shadow;
+    @apply hover:border-primary/50;
+    @apply hover:bg-gradient-to-r;
+    @apply hover:from-card;
+    @apply hover:to-primary/10;
+  }
+
+  .experience-card {
+    @apply transition-all;
+    @apply duration-300;
+    @apply ease-in-out;
+    @apply hover:scale-[1.02];
+    @apply hover:shadow;
+    @apply hover:border-primary/40;
+    @apply hover:bg-gradient-to-br;
+    @apply hover:from-card;
+    @apply hover:to-primary/5;
+  }
+
+  .social-link {
+    @apply transition-all;
+    @apply duration-200;
+    @apply ease-in-out;
+    @apply hover:scale-110;
+    @apply hover:bg-primary;
+    @apply hover:text-primary-foreground;
+    @apply hover:shadow;
+  }
+
+  .nav-link {
+    @apply transition-all;
+    @apply duration-200;
+    @apply ease-in-out;
+    @apply hover:text-primary;
+    @apply hover:scale-105;
+  }
+}

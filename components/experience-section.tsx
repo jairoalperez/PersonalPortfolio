@@ -1,20 +1,28 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Calendar, MapPin, ChevronDown, ChevronUp } from "lucide-react"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
-import { Github, ExternalLink } from "lucide-react"
-import projects from "../projects.json"
-import Image from "next/image"
-import Link from "next/link"
-import { Card, CardContent } from "./ui/card"
-import { Button } from "./ui/button"
+import { useState } from "react";
+import { Calendar, MapPin, ChevronDown, ChevronUp } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { Github, ExternalLink } from "lucide-react";
+import projects from "../projects.json";
+import Image from "next/image";
+import Link from "next/link";
+import { Card, CardContent } from "./ui/card";
+import { Button } from "./ui/button";
 
 export default function ExperienceSection() {
   return (
     <section id="experience" className="py-20">
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold mb-12 text-center">Professional Experience</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center">
+          Professional Experience
+        </h2>
 
         <div className="space-y-6 max-w-4xl mx-auto">
           <ExperienceCard
@@ -23,9 +31,9 @@ export default function ExperienceSection() {
             location="Orlando, FL"
             period="February 2024 - Present"
             responsibilities={[
+              "Participated in the development of high-performance web applications using Next.js for the streaming platform and eCommerce store, and ASP.NET Core for the backend, and MySQL on AWS RDS for the database, used Docker, ECS and GitHub Actions for streamlined deployment and scalability.",
               "Engineered a REST API using ASP.NET Core and MariaDB, hosted on GCP, to manage and integrate streaming service data with metadata from TMDB and IMDb, ensuring seamless data retrieval and scalability.",
               "Worked on the development and management of a Node.js API for web scraping data from over 50 streaming services, efficiently uploading to AWS S3, optimizing data flow and storage.",
-              "Participated in the development of high-performance web applications using Next.js for the streaming platform and eCommerce store, and ASP.NET Core for the backend, and SQL Server on AWS RDS for the database, used Docker and Kubernetes for streamlined deployment and scalability.",
             ]}
           />
 
@@ -35,7 +43,7 @@ export default function ExperienceSection() {
             location="United States (Remote)"
             period="December 2021 - January 2024"
             responsibilities={[
-              "Developed and optimized different healthcare and eCommerce applications using ASP.NET Core, Ruby on Rails, NestJS, Java Spring Boot for backend, and React.js and Angular for frontend, delivering high-quality, scalable solutions.",
+              "Developed and optimized different healthcare and eCommerce applications using ASP.NET Core for backend, and React (Next.js) and Angular for frontend, delivering high-quality, scalable solutions.",
               "Leveraged Docker, Kubernetes, and AWS to streamline deployment processes, enhance scalability, and ensure smooth, efficient operation in cloud environments.",
               "Played a key role in improving application performance, reducing downtime, and enhancing the overall user experience, contributing to the success of critical projects.",
             ]}
@@ -54,54 +62,96 @@ export default function ExperienceSection() {
           />
         </div>
 
-
         {/* Projects Section */}
         <div>
-          <h3 className="text-xl font-semibold mb-4 text-center mt-12">Featured Projects</h3>
+          <h3 className="text-xl font-semibold mb-4 text-center mt-12">
+            Featured Projects
+          </h3>
           <div className="max-w-4xl mx-auto">
             <Carousel className="w-full">
               <CarouselContent>
                 {projects.map((project, index) => (
-                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                  <CarouselItem
+                    key={index}
+                    className="md:basis-1/2 lg:basis-1/3"
+                  >
                     <div className="p-2">
-                      <Card className="overflow-hidden group hover:shadow-lg transition-shadow duration-300">
-                        <div className="relative aspect-video overflow-hidden">
+                      <Card className="overflow-hidden group hover:shadow-xl hover:border-primary/60 transition-all duration-300 border border-border/50 bg-gradient-to-br from-card to-card/50">
+                        <div className="relative aspect-video overflow-hidden rounded-lg">
                           <Image
                             src={project.image || "/placeholder.svg"}
                             alt={project.title}
                             fill
                             className="object-cover transition-transform duration-300 group-hover:scale-105"
                           />
-                          <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2">
-                            <Button size="sm" variant="secondary" asChild>
-                              <Link href={project.repo ?? "#"} target="_blank" rel="noopener noreferrer">
-                                <Github className="w-4 h-4 mr-1" />
-                                Code
-                              </Link>
-                            </Button>
-                            <Button size="sm" variant="secondary" asChild>
-                              <Link href={project.url ?? "#"} target="_blank" rel="noopener noreferrer">
-                                <ExternalLink className="w-4 h-4 mr-1" />
-                                Live
-                              </Link>
-                            </Button>
-                          </div>
+                          {(project.repo || project.url) && (
+                            <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2">
+                              {project.repo && (
+                                <Button size="sm" variant="secondary" asChild>
+                                  <Link
+                                    href={project.repo}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                  >
+                                    <Github className="w-4 h-4 mr-1" />
+                                    Code
+                                  </Link>
+                                </Button>
+                              )}
+                              {project.url && (
+                                <Button size="sm" variant="secondary" asChild>
+                                  <Link
+                                    href={project.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                  >
+                                    <ExternalLink className="w-4 h-4 mr-1" />
+                                    Live
+                                  </Link>
+                                </Button>
+                              )}
+                            </div>
+                          )}
                         </div>
                         <CardContent className="p-4">
-                          <h4 className="font-semibold text-lg line-clamp-1">{project.title}</h4>
-                          <div className="flex gap-2 sm:hidden">
-                            <Button size="sm" variant="outline" className="flex-1 bg-transparent" asChild>
-                              <Link href={project.repo ?? "#"} target="_blank" rel="noopener noreferrer">
-                                <Github className="w-4 h-4 mr-1" />
-                                Code
-                              </Link>
-                            </Button>
-                            <Button size="sm" variant="outline" className="flex-1 bg-transparent" asChild>
-                              <Link href={project.url ?? "#"} target="_blank" rel="noopener noreferrer">
-                                <ExternalLink className="w-4 h-4 mr-1" />
-                                Live
-                              </Link>
-                            </Button>
+                          <h4 className="font-semibold text-lg text-center line-clamp-1">
+                            {project.title}
+                          </h4>
+                          <div className="flex gap-2 sm:hidden justify-center mt-2">
+                            {project.repo && (
+                              <Button
+                                size="sm"
+                                variant="outline"
+                                className="flex-1 bg-transparent"
+                                asChild
+                              >
+                                <Link
+                                  href={project.repo}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  <Github className="w-4 h-4 mr-1" />
+                                  Code
+                                </Link>
+                              </Button>
+                            )}
+                            {project.url && (
+                              <Button
+                                size="sm"
+                                variant="outline"
+                                className="flex-1 bg-transparent"
+                                asChild
+                              >
+                                <Link
+                                  href={project.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  <ExternalLink className="w-4 h-4 mr-1" />
+                                  Live
+                                </Link>
+                              </Button>
+                            )}
                           </div>
                         </CardContent>
                       </Card>
@@ -116,7 +166,7 @@ export default function ExperienceSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function ExperienceCard({
@@ -126,17 +176,20 @@ function ExperienceCard({
   period,
   responsibilities,
 }: {
-  title: string
-  company: string
-  location: string
-  period: string
-  responsibilities: string[]
+  title: string;
+  company: string;
+  location: string;
+  period: string;
+  responsibilities: string[];
 }) {
-  const [isExpanded, setIsExpanded] = useState(false)
+  const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <div className="bg-gradient-to-br from-card to-card/50 p-6 rounded-lg shadow-lg border border-border/50 experience-card backdrop-blur-sm">
-      <div className="cursor-pointer" onClick={() => setIsExpanded(!isExpanded)}>
+      <div
+        className="cursor-pointer"
+        onClick={() => setIsExpanded(!isExpanded)}
+      >
         <div className="flex items-start justify-between">
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-2">
@@ -175,7 +228,9 @@ function ExperienceCard({
 
       {isExpanded && (
         <div className="mt-6 ml-4 animate-in slide-in-from-top-2 duration-200">
-          <h5 className="font-semibold mb-3 text-primary">Key Responsibilities:</h5>
+          <h5 className="font-semibold mb-3 text-primary">
+            Key Responsibilities:
+          </h5>
           <ul className="list-disc pl-5 space-y-2">
             {responsibilities.map((responsibility, index) => (
               <li
@@ -189,5 +244,5 @@ function ExperienceCard({
         </div>
       )}
     </div>
-  )
+  );
 }

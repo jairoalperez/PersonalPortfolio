@@ -2,6 +2,13 @@
 
 import { useState } from "react"
 import { Calendar, MapPin, ChevronDown, ChevronUp } from "lucide-react"
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
+import { Github, ExternalLink } from "lucide-react"
+import projects from "../projects.json"
+import Image from "next/image"
+import Link from "next/link"
+import { Card, CardContent } from "./ui/card"
+import { Button } from "./ui/button"
 
 export default function ExperienceSection() {
   return (
@@ -45,6 +52,67 @@ export default function ExperienceSection() {
               "Architected and optimized the database structure to ensure data integrity, scalability, and smooth integration between frontend and backend systems.",
             ]}
           />
+        </div>
+
+
+        {/* Projects Section */}
+        <div>
+          <h3 className="text-xl font-semibold mb-4 text-center mt-12">Featured Projects</h3>
+          <div className="max-w-4xl mx-auto">
+            <Carousel className="w-full">
+              <CarouselContent>
+                {projects.map((project, index) => (
+                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                    <div className="p-2">
+                      <Card className="overflow-hidden group hover:shadow-lg transition-shadow duration-300">
+                        <div className="relative aspect-video overflow-hidden">
+                          <Image
+                            src={project.image || "/placeholder.svg"}
+                            alt={project.title}
+                            fill
+                            className="object-cover transition-transform duration-300 group-hover:scale-105"
+                          />
+                          <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2">
+                            <Button size="sm" variant="secondary" asChild>
+                              <Link href={project.repo ?? "#"} target="_blank" rel="noopener noreferrer">
+                                <Github className="w-4 h-4 mr-1" />
+                                Code
+                              </Link>
+                            </Button>
+                            <Button size="sm" variant="secondary" asChild>
+                              <Link href={project.url ?? "#"} target="_blank" rel="noopener noreferrer">
+                                <ExternalLink className="w-4 h-4 mr-1" />
+                                Live
+                              </Link>
+                            </Button>
+                          </div>
+                        </div>
+                        <CardContent className="p-4">
+                          <h4 className="font-semibold text-lg line-clamp-1">{project.title}</h4>
+                          <div className="flex gap-2 sm:hidden">
+                            <Button size="sm" variant="outline" className="flex-1 bg-transparent" asChild>
+                              <Link href={project.repo ?? "#"} target="_blank" rel="noopener noreferrer">
+                                <Github className="w-4 h-4 mr-1" />
+                                Code
+                              </Link>
+                            </Button>
+                            <Button size="sm" variant="outline" className="flex-1 bg-transparent" asChild>
+                              <Link href={project.url ?? "#"} target="_blank" rel="noopener noreferrer">
+                                <ExternalLink className="w-4 h-4 mr-1" />
+                                Live
+                              </Link>
+                            </Button>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="hidden sm:flex" />
+              <CarouselNext className="hidden sm:flex" />
+            </Carousel>
+          </div>
         </div>
       </div>
     </section>

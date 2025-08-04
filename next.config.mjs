@@ -7,7 +7,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    domains: ['i.imgur.com'], // agrega aquí tu dominio
+    domains: ['i.imgur.com', "res.cloudinary.com"],
   },
 }
 

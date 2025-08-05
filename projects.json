@@ -2,19 +2,19 @@
     {
         "title": "Playboxd",
         "image": "https://res.cloudinary.com/dvg3un8nb/image/upload/v1753469107/Screenshot_2025-07-25_135259_omhcoc.png",
-        "url": "https://playboxd-webapp.vercel.app/",
+        "url": "https://playboxd.jairoalperez.com/",
         "repo": "https://github.com/jairoalperez/Playboxd-Webapp"
     },
     {
         "title": "TheaterCast",
         "image": "https://res.cloudinary.com/dvg3un8nb/image/upload/v1753469107/Screenshot_2025-07-25_135211_fz5gdz.png",
-        "url": "https://theater-web-app.vercel.app/actors",
+        "url": "https://theatercast.jairoalperez.com/actors",
         "repo": "https://github.com/jairoalperez/Theater---WebApp"
     },
     {
         "title": "TheaterCast API",
         "image": "https://res.cloudinary.com/dvg3un8nb/image/upload/v1754320205/generatedHeaderImage-1716918058504_cdqb03.jpg",
-        "url": "https://theater-rest-api.onrender.com/swagger/index.html",
+        "url": "https://api.theatercast.jairoalperez.com/swagger/index.html",
         "repo": "https://github.com/jairoalperez/Theater---REST-API"
     },
     {

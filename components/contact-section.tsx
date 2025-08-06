@@ -1,7 +1,39 @@
+"use client"
+
 import { Mail, Phone, MapPin } from "lucide-react"
 import Link from "next/link"
+import { useState } from "react"
 
 export default function ContactSection() {
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" })
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle")
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setStatus("sending")
+
+    try {
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
+
+      if (res.ok) {
+        setStatus("success")
+        setFormData({ name: "", email: "", message: "" })
+      } else {
+        setStatus("error")
+      }
+    } catch (err) {
+      setStatus("error")
+    }
+  }
+
   return (
     <section id="contact" className="py-20 from-primary/5 via-background to-background">
       <div className="container mx-auto">
@@ -51,7 +83,7 @@ export default function ContactSection() {
 
               <div>
                 <h3 className="text-xl font-semibold mb-6">Send a Message</h3>
-                <form className="space-y-4">
+                <form className="space-y-4" onSubmit={handleSubmit}>
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium mb-1">
                       Name
@@ -60,6 +92,8 @@ export default function ContactSection() {
                       type="text"
                       id="name"
                       name="name"
+                      value={formData.name}
+                      onChange={handleChange}
                       className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                       required
                     />
@@ -73,6 +107,8 @@ export default function ContactSection() {
                       type="email"
                       id="email"
                       name="email"
+                      value={formData.email}
+                      onChange={handleChange}
                       className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                       required
                     />
@@ -86,6 +122,8 @@ export default function ContactSection() {
                       id="message"
                       name="message"
                       rows={4}
+                      value={formData.message}
+                      onChange={handleChange}
                       className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                       required
                     ></textarea>
@@ -93,10 +131,14 @@ export default function ContactSection() {
 
                   <button
                     type="submit"
+                    disabled={status === "sending"}
                     className="w-full bg-primary text-primary-foreground py-2 px-4 rounded-md hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
                   >
-                    Send Message
+                    {status === "sending" ? "Sending..." : "Send Message"}
                   </button>
+
+                  {status === "success" && <p className="text-green-600 text-sm">Message sent successfully!</p>}
+                  {status === "error" && <p className="text-red-600 text-sm">Something went wrong. Please try again.</p>}
                 </form>
               </div>
             </div>

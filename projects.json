@@ -1,5 +1,11 @@
 [
     {
+        "title": "JPChat",
+        "image": "https://res.cloudinary.com/dvg3un8nb/image/upload/v1754688330/6a63b964-a80a-46aa-be78-55cea817f4cc.png",
+        "url": "https://jpchat.jairoalperez.com/",
+        "repo": "https://github.com/jairoalperez/JPChat-WebApp"
+    },
+    {
         "title": "Playboxd",
         "image": "https://res.cloudinary.com/dvg3un8nb/image/upload/v1753469107/Screenshot_2025-07-25_135259_omhcoc.png",
         "url": "https://playboxd.jairoalperez.com/",

@@ -20,7 +20,7 @@
     {
         "title": "TheaterCast API",
         "image": "https://res.cloudinary.com/dvg3un8nb/image/upload/v1754320205/generatedHeaderImage-1716918058504_cdqb03.jpg",
-        "url": "https://api.theatercast.jairoalperez.com/swagger/index.html",
+        "url": null,
         "repo": "https://github.com/jairoalperez/Theater---REST-API"
     },
     {

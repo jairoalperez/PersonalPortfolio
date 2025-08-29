@@ -31,7 +31,7 @@ export default function ExperienceSection() {
             location="Orlando, FL"
             period="February 2024 - Present"
             responsibilities={[
-              "Participated in the development of high-performance web applications using Next.js for the streaming platform and eCommerce store, and ASP.NET Core for the backend, and MySQL on AWS RDS for the database, used Docker, ECS and GitHub Actions for streamlined deployment and scalability.",
+              "Lead the development of high-performance web applications using Next.js for the streaming platform and eCommerce store, and ASP.NET Core for the backend, and MySQL on AWS RDS for the database, used Docker, ECS and GitHub Actions for streamlined deployment and scalability.",
               "Engineered a REST API using ASP.NET Core and MariaDB, hosted on GCP, to manage and integrate streaming service data with metadata from TMDB and IMDb, ensuring seamless data retrieval and scalability.",
               "Worked on the development and management of a Node.js API for web scraping data from over 50 streaming services, efficiently uploading to AWS S3, optimizing data flow and storage.",
             ]}
@@ -82,7 +82,12 @@ export default function ExperienceSection() {
                             src={project.image || "/placeholder.svg"}
                             alt={project.title}
                             fill
-                            className="object-cover transition-transform duration-300 group-hover:scale-105"
+                            /* Desktop: ~340–360px por tarjeta en un contenedor ~1024px */
+                            sizes="(min-width:1280px) 360px, (min-width:1024px) 330px, (min-width:768px) 50vw, 100vw"
+                            quality={92}
+                            className="object-cover transform-gpu transition-transform duration-300 group-hover:scale-[1.02] will-change-transform"
+                            priority={index < 3}
+                            placeholder="empty"
                           />
                           {(project.repo || project.url) && (
                             <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2">

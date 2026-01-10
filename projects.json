@@ -1,5 +1,17 @@
 [
     {
+        "title": "JapeeCODE",
+        "image": "https://res.cloudinary.com/dvg3un8nb/image/upload/v1768069599/Screenshot_2026-01-10_132240_shhztg.png",
+        "url": "https://www.japeecode.com/",
+        "repo": null
+    },
+    {
+        "title": "SVStats",
+        "image": "https://res.cloudinary.com/dvg3un8nb/image/upload/v1768069581/Screenshot_2026-01-10_132218_n3tny2.png",
+        "url": "https://svstats.jairoalperez.com/",
+        "repo": "https://github.com/jairoalperez/SVStats-NextJS"
+    },
+    {
         "title": "JPChat",
         "image": "https://res.cloudinary.com/dvg3un8nb/image/upload/v1754688330/6a63b964-a80a-46aa-be78-55cea817f4cc.png",
         "url": "https://jpchat.jairoalperez.com/",

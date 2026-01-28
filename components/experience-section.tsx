@@ -41,8 +41,8 @@ export default function ExperienceSection() {
 
                     <ExperienceCard
                         title="Software Developer"
-                        company="SNVA Technologies (Staffing)"
-                        location="United States (Remote)"
+                        company="SNVA Technologies"
+                        location="Orlando, FL (Remote)"
                         period="December 2021 - January 2024"
                         responsibilities={[
                             "Developed and optimized different healthcare and eCommerce applications using ASP.NET Core for backend, and React (Next.js) and Angular for frontend, delivering high-quality, scalable solutions.",

@@ -29,7 +29,7 @@ export default function SkillsSection() {
           <SkillCard
             icon={<Database />}
             title="Databases and Cloud"
-            skills={["MySQL", "PostgreSQL", "MariaDB", "Oracle", "MongoDB", "AWS", "GCP", "Azure"]}
+            skills={["MySQL", "PostgreSQL", "MariaDB", "Oracle", "DB2", "MongoDB", "AWS", "GCP"]}
           />
 
           <SkillCard
@@ -41,7 +41,7 @@ export default function SkillsSection() {
           <SkillCard
             icon={<Users />}
             title="Other Skills"
-            skills={["AI Implementation", "Web Scraping", "Scrum/Agile", "Data Analysis", "Cybersecurity"]}
+            skills={["AI Implementation", "Web Scraping", "Scrum/Agile", "Data Analysis", "IBM i", "RPG"]}
           />
         </div>
 

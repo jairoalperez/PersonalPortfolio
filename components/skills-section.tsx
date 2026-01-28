@@ -11,7 +11,7 @@ export default function SkillsSection() {
           <SkillCard
             icon={<Code />}
             title="Programming Languages"
-            skills={["TypeScript", "C#", "JavaScript", "Java", "Python", "Ruby", "HTML", "CSS"]}
+            skills={["TypeScript", "C#", "JavaScript", "Java", "Python", "RPG", "Ruby", "HTML", "CSS"]}
           />
 
           <SkillCard
@@ -41,7 +41,7 @@ export default function SkillsSection() {
           <SkillCard
             icon={<Users />}
             title="Other Skills"
-            skills={["AI Implementation", "Web Scraping", "Scrum/Agile", "Data Analysis", "IBM i", "RPG"]}
+            skills={["AI Implementation", "Web Scraping", "IBM i", "Scrum/Agile", "Data Analysis"]}
           />
         </div>
 

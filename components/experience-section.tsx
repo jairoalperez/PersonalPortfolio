@@ -54,7 +54,7 @@ export default function ExperienceSection() {
                     <ExperienceCard
                         title="Software Engineer"
                         company="N&V Consultores C.A"
-                        location="Maracaibo, Venezuela"
+                        location="Orlando, FL (Remote)"
                         period="September 2020 - December 2021"
                         responsibilities={[
                             "Leveraged ASP.NET Core, React.js, and PostgreSQL to design and implement full-stack applications for efficient employee/project time tracking and streamlined service order and inventory management.",

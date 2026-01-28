@@ -13,8 +13,8 @@ export default function IntroSection() {
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-left">Software Engineer</h2>
           <p className="text-muted-foreground mb-8 text-lg leading-relaxed">
             Experienced full-stack developer with over 4 years of expertise in building scalable, high-performance
-            applications. I specialize in modern web technologies including ASP.NET Core, React.js, Next.js, and cloud
-            platforms like AWS, GCP, and Azure. My passion lies in creating efficient, user-centric solutions that solve
+            applications. I specialize in modern web technologies including .NET Core, React.js, Next.js, and cloud
+            platforms like AWS and GCP. My passion lies in creating efficient, user-centric solutions that solve
             real-world problems while maintaining clean, maintainable code.
           </p>
           <p className="text-muted-foreground mb-8 text-lg leading-relaxed">

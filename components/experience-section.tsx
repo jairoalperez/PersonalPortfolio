@@ -31,11 +31,10 @@ export default function ExperienceSection() {
                         location="Orlando, FL"
                         period="February 2024 - Present"
                         responsibilities={[
-                            "Lead the development of high-performance web applications using Next.js for the streaming platform and eCommerce store, and ASP.NET Core for the backend, with SQL Server on AWS RDS as the primary database. Utilized Docker, GitHub Actions, ECR, ECS, and Fargate for streamlined deployment and scalability.",
-                            "Engineered a REST API using ASP.NET Core and MySQL to manage and integrate streaming service data with metadata from TMDB and IMDb, ensuring seamless data retrieval and performance at scale.",
-                            "Developed and maintained a Node.js API for large-scale web scraping across 50+ streaming services, implementing AI-based content classification and deduplication to enhance data quality before upload to AWS S3.",
-                            "Integrated AI-driven capabilities using Anthropic Claude to boost operational efficiency — including intelligent validation of streaming deeplinks, automated detection of broken URLs, and anomaly detection in metadata synchronization workflows.",
-                            "Leveraged LLMs such as Anthropic Claude to automatically summarize incoming scraped data and identify trending shows, improving data insight and discovery pipelines."
+                            "Led the development of multiple high-performance web applications for streaming and eCommerce platforms using Next.js (frontend), .NET (backend), and AWS (RDS, ECS, Fargate, ECR, S3), enabling scalable and reliable service delivery across different business domains.",
+                            "Designed and implemented a scalable data ingestion pipeline for streaming content, aggregating data from 50+ external services and enriching it with metadata from TMDB and IMDb. Built serverless scraping workflows using AWS Lambda with scheduled executions every 48 hours, storing processed data in a centralized database and exposing it via a high-performance REST API.",
+                            "Led the development of an internal analytics platform to query, export, and analyze company data, incorporating LLM-based summarization to generate insights and improve data-driven decision-making.",
+                            "Drove adoption of AI-assisted development by standardizing Cursor, integrating Claude Code via CLI, and enabling automated GitHub code reviews, improving development velocity and code quality."
                         ]}
                     />
 
@@ -45,7 +44,7 @@ export default function ExperienceSection() {
                         location="Orlando, FL (Remote)"
                         period="December 2021 - January 2024"
                         responsibilities={[
-                            "Developed and optimized different healthcare and eCommerce applications using ASP.NET Core for backend, and React (Next.js) and Angular for frontend, delivering high-quality, scalable solutions.",
+                            "Developed and optimized different websites and eCommerce services using .NET and Nest for backend, and Next.js for frontend, delivering high-quality, scalable solutions.",
                             "Leveraged Docker, Kubernetes, and AWS to streamline deployment processes, enhance scalability, and ensure smooth, efficient operation in cloud environments.",
                             "Played a key role in improving application performance, reducing downtime, and enhancing the overall user experience, contributing to the success of critical projects.",
                         ]}
@@ -54,7 +53,7 @@ export default function ExperienceSection() {
                     <ExperienceCard
                         title="Software Engineer"
                         company="N&V Consultores C.A"
-                        location="Orlando, FL (Remote)"
+                        location="(Remote)"
                         period="September 2020 - December 2021"
                         responsibilities={[
                             "Leveraged ASP.NET Core, React.js, and PostgreSQL to design and implement full-stack applications for efficient employee/project time tracking and streamlined service order and inventory management.",

@@ -3,10 +3,13 @@
 import { Mail, Phone, MapPin } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
+import { motion, useReducedMotion } from "framer-motion"
+import { ScrollReveal } from "@/components/scroll-reveal"
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle")
+  const reduce = useReducedMotion()
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -37,9 +40,16 @@ export default function ContactSection() {
   return (
     <section id="contact" className="py-20 from-primary/5 via-background to-background">
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold mb-12 text-center">Get In Touch</h2>
+        <ScrollReveal>
+          <h2 className="text-3xl font-bold mb-12 text-center">Get In Touch</h2>
+        </ScrollReveal>
 
-        <div className="max-w-3xl mx-auto bg-gradient-to-br from-card to-card/50 rounded-lg shadow-xl overflow-hidden border border-border/50 backdrop-blur-sm">
+        <ScrollReveal delay={0.08} y={36}>
+        <motion.div
+          className="max-w-3xl mx-auto bg-gradient-to-br from-card to-card/50 rounded-lg shadow-xl overflow-hidden border border-border/50 backdrop-blur-sm"
+          whileHover={reduce ? undefined : { boxShadow: "0 25px 50px -12px hsl(var(--primary) / 0.12)" }}
+          transition={{ duration: 0.35 }}
+        >
           <div className="p-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
@@ -129,13 +139,15 @@ export default function ContactSection() {
                     ></textarea>
                   </div>
 
-                  <button
+                  <motion.button
                     type="submit"
                     disabled={status === "sending"}
-                    className="w-full bg-primary text-primary-foreground py-2 px-4 rounded-md hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                    className="w-full bg-primary text-primary-foreground py-2 px-4 rounded-md hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary disabled:opacity-70"
+                    whileHover={reduce || status === "sending" ? undefined : { scale: 1.02 }}
+                    whileTap={reduce || status === "sending" ? undefined : { scale: 0.98 }}
                   >
                     {status === "sending" ? "Sending..." : "Send Message"}
-                  </button>
+                  </motion.button>
 
                   {status === "success" && <p className="text-green-600 text-sm">Message sent successfully!</p>}
                   {status === "error" && <p className="text-red-600 text-sm">Something went wrong. Please try again.</p>}
@@ -143,7 +155,8 @@ export default function ContactSection() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
+        </ScrollReveal>
       </div>
     </section>
   )

@@ -1,5 +1,4 @@
-import { ArrowDown } from "lucide-react"
-import Link from "next/link"
+import AnimatedExploreLink from "@/components/animated-explore-link"
 import ContactSection from "@/components/contact-section"
 import ExperienceSection from "@/components/experience-section"
 import Footer from "@/components/footer"
@@ -15,15 +14,7 @@ export default function Home() {
       <main className="container mx-auto px-4 sm:px-6 lg:px-8">
         <IntroSection />
 
-        <div className="flex justify-center my-12">
-          <Link
-            href="#skills"
-            className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <span>Explore my skills</span>
-            <ArrowDown className="h-4 w-4" />
-          </Link>
-        </div>
+        <AnimatedExploreLink />
 
         <SkillsSection />
         <ExperienceSection />

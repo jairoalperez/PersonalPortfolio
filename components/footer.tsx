@@ -1,10 +1,12 @@
 import Link from "next/link"
 import { Github, Linkedin, Mail } from "lucide-react"
+import { ScrollReveal } from "@/components/scroll-reveal"
 
 export default function Footer() {
   return (
     <footer className="bg-card border-t py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <ScrollReveal>
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <h3 className="text-xl font-bold">Jairo Pérez</h3>
@@ -43,6 +45,7 @@ export default function Footer() {
         <div className="mt-8 pt-8 border-t border-border text-center text-muted-foreground text-sm">
           <p>&copy; {new Date().getFullYear()} Jairo Pérez. All rights reserved.</p>
         </div>
+        </ScrollReveal>
       </div>
     </footer>
   )

@@ -80,18 +80,6 @@
     @apply hover:to-primary/10;
   }
 
-  .experience-card {
-    @apply transition-all;
-    @apply duration-300;
-    @apply ease-in-out;
-    @apply hover:scale-[1.02];
-    @apply hover:shadow;
-    @apply hover:border-primary/40;
-    @apply hover:bg-gradient-to-br;
-    @apply hover:from-card;
-    @apply hover:to-primary/5;
-  }
-
   .social-link {
     @apply transition-all;
     @apply duration-200;

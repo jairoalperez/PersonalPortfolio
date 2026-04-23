@@ -92,13 +92,13 @@ export default function FeaturedProjectsShowcase() {
 
           <CarouselPrevious
             className={cn(
-              "left-2 sm:left-4 md:left-6 h-11 w-11 border-primary/20 bg-background/90 shadow-lg backdrop-blur-md",
+              "left-2 sm:left-4 md:left-6 h-11 w-11 border-primary/20 bg-background/95 shadow-lg md:backdrop-blur-md md:bg-background/90",
               "hover:bg-background hover:border-primary/40"
             )}
           />
           <CarouselNext
             className={cn(
-              "right-2 sm:right-4 md:right-6 h-11 w-11 border-primary/20 bg-background/90 shadow-lg backdrop-blur-md",
+              "right-2 sm:right-4 md:right-6 h-11 w-11 border-primary/20 bg-background/95 shadow-lg md:backdrop-blur-md md:bg-background/90",
               "hover:bg-background hover:border-primary/40"
             )}
           />

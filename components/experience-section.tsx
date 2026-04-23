@@ -62,7 +62,13 @@ export default function ExperienceSection() {
         className="pointer-events-none absolute inset-0 -z-10 opacity-40"
         aria-hidden
       >
-        <div className="absolute left-1/2 top-0 h-[min(70vh,520px)] w-[min(90vw,720px)] -translate-x-1/2 rounded-full bg-primary/10 blur-[100px]" />
+        <div
+          className="absolute left-1/2 top-0 h-[min(70vh,520px)] w-[min(90vw,720px)] -translate-x-1/2 rounded-full"
+          style={{
+            background:
+              "radial-gradient(closest-side, hsl(var(--primary) / 0.18), transparent 70%)",
+          }}
+        />
       </div>
 
       <div className="container mx-auto">
@@ -129,7 +135,7 @@ function ExperienceTimelineCard({
 }) {
   return (
     <motion.article
-      className={`relative rounded-2xl border bg-card/80 shadow-sm backdrop-blur-sm transition-colors duration-300 md:ml-10 ${
+      className={`relative rounded-2xl border bg-card/80 shadow-sm md:backdrop-blur-sm transition-colors duration-300 md:ml-10 ${
         isExpanded
           ? "border-primary/50 shadow-lg shadow-primary/5 ring-1 ring-primary/20"
           : "border-border/60 hover:border-primary/25"

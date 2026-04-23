@@ -46,7 +46,7 @@ export default function ContactSection() {
 
         <ScrollReveal delay={0.08} y={36}>
         <motion.div
-          className="max-w-3xl mx-auto bg-gradient-to-br from-card to-card/50 rounded-lg shadow-xl overflow-hidden border border-border/50 backdrop-blur-sm"
+          className="max-w-3xl mx-auto bg-gradient-to-br from-card to-card/50 rounded-lg shadow-xl overflow-hidden border border-border/50 md:backdrop-blur-sm"
           whileHover={reduce ? undefined : { boxShadow: "0 25px 50px -12px hsl(var(--primary) / 0.12)" }}
           transition={{ duration: 0.35 }}
         >

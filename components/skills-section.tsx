@@ -84,7 +84,7 @@ function SkillCard({ icon, title, skills }: { icon: React.ReactNode; title: stri
   const reduce = useReducedMotion()
   return (
     <motion.div
-      className="bg-gradient-to-br from-card to-card/50 p-6 rounded-lg shadow-lg border border-border/50 skill-card backdrop-blur-sm h-full"
+      className="bg-gradient-to-br from-card to-card/50 p-6 rounded-lg shadow-lg border border-border/50 skill-card md:backdrop-blur-sm h-full"
       whileHover={reduce ? undefined : { y: -6, transition: { duration: 0.25, ease } }}
     >
       <div className="flex items-center mb-4">
@@ -109,7 +109,7 @@ function SkillCard({ icon, title, skills }: { icon: React.ReactNode; title: stri
 
 function LanguageBadge({ language, level }: { language: string; level: string }) {
   return (
-    <div className="flex items-center bg-gradient-to-r from-card to-card/80 px-4 py-2 rounded-full shadow-lg border border-border/50 language-badge cursor-default backdrop-blur-sm">
+    <div className="flex items-center bg-gradient-to-r from-card to-card/80 px-4 py-2 rounded-full shadow-lg border border-border/50 language-badge cursor-default md:backdrop-blur-sm">
       <span className="font-medium">{language}</span>
       <span className="mx-2 text-primary">•</span>
       <span className="text-muted-foreground text-sm">{level}</span>
